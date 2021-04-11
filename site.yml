@@ -23,8 +23,8 @@
     become: yes
     tasks:
         -   name: copy docker deamon.json
-            copy: src=./config/docker-mirror-daemon.json dest=/etc/docker/daemon.json
+            copy: src=../config/docker-mirror-daemon.json dest=/etc/docker/daemon.json
         -   name: copy k3s containerd mirror config
-            copy: src=./config/k3s-containerd.config.toml.tmpl dest=/var/lib/rancher/k3s/agent/etc/containerd/config.toml.tmpl
+            copy: src=../config/k3s-containerd.config.toml.tmpl dest=/var/lib/rancher/k3s/agent/etc/containerd/config.toml.tmpl
         -   name: increate max_map_count (used for elasticsearch)
             shell: sysctl -w vm.max_map_count=262144
